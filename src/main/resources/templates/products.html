@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Products page</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+</head>
+<body>
+	<br>
+	<form th:action="@{/process_transaction}" th:object="${transaction}" method="post">
+		<select th:field="*{price}">
+			<option th:value="40">Product 1 - 40lv.</option>
+			<option th:value="60">Product 2 - 60lv.</option>
+			<option th:value="80">Product 3 - 80lv.</option>
+		</select> <br>
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">User name of person who
+					referred you: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{usernameEmployee}" class="form-control"
+						required>
+				</div>
+				<br>
+			</div>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-primary">Buy</button>
+		</div>
+	</form>
+
+</body>
+</html>
